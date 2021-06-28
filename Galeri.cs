@@ -7,13 +7,6 @@ namespace galeri_otomasyonu
     {
         public List<Araba> Arabalar = new List<Araba>();
 
-        public int ToplamAracSayisi { 
-            get
-            {
-                // burada Arabalar listesinde ki araç sayısı return edilecek
-                return 0;
-            }
-        }
         public int KiradakiAracSayisi
         {
             get
