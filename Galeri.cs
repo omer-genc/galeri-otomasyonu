@@ -7,7 +7,13 @@ namespace galeri_otomasyonu
     {
         public List<Araba> Arabalar = new List<Araba>();
 
-        public int ToplamAracSayisi { get; }
+        public int ToplamAracSayisi { 
+            get
+            {
+                // burada Arabalar listesinde ki araç sayısı return edilecek
+                return 0;
+            }
+        }
         public int KiradakiAracSayisi
         {
             get
@@ -25,10 +31,36 @@ namespace galeri_otomasyonu
                 return adet;
             }
         }
-        public int GaleridekiAracSayisi { get; }
-        public int ToplamAracKiralanmaSuresi { get; }
-        public int ToplamAracKiralanmaAdedi { get; }
-        public int Ciro { get; }
+        public int GaleridekiAracSayisi { 
+            get
+            {
+                // burada Arabalar listesinde ki araçların arasından 
+                //kaç tanesinin durumu galeride olduğu return edilecek
+                return 0;
+            } 
+        }
+        public int ToplamAracKiralanmaSuresi { 
+            get
+            {
+                // her bir aracın toplam kiralama süresi toplanıp return edilecek
+                return 0;
+            } 
+        
+        }
+        public int ToplamAracKiralanmaAdedi { 
+            get
+            {
+                // her bir aracın kiralanma sayısı toplanıp return edilecek
+                return 0;
+            } 
+        }
+        public float Ciro { 
+            get
+            {
+                // herbir aracın AracinCirosu toplanacak ve return edilecek
+                return 0;
+            } 
+        }
 
 
 
@@ -49,11 +81,20 @@ namespace galeri_otomasyonu
         }
 
 
-        public void ArabaEkle()
+        public void ArabaEkle(/* araç parametereli*/)
         {
+            //Parametreneden geln değerler ile bir araç nesnesi oluşturulmalı ve
+            //Arabalar listesine eklenmeli
             //bu metodun parametresinden arabaya ait tüm bilgiler tek tek gelmeli
 
         }
+
+        public Araba ArabaBul(string plaka)
+        {
+            Araba x = new Araba();
+            // plaka il eşleşen 
+            return x;
+        } // İHTİYAÇ DOĞRULTUSUNDA EKLENDİ
         
     }
 }

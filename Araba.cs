@@ -6,11 +6,12 @@ namespace galeri_otomasyonu
 {
     class Araba
     {
+        // kiralam süresi sayesinde daha detaylı verilere erişebileceğiz
+        public List<int> KiralanmaSureleri = new List<int>();
         public string Plaka { get; set; }
         public string Marka { get; set; }
         public float KiralamaBedeli { get; set; }
 
-        public List<int> KiralanmaSureleri = new List<int>();
 
         public int ToplamKiralanmaSuresi
         {
@@ -32,10 +33,24 @@ namespace galeri_otomasyonu
             }
         }
 
+        public float AracinCirosu 
+        {
+            get
+            {
+                // aracın toplam kiralanma süresi ve kiralanma 
+                // bedeli kullanarak ciro bulunacak return edilecek
+
+                return 0;
+            }
+        }// İHTİYAÇ DOĞRULTUSUNDA EKLENDİ
+
         public ARAC_TIPI AracTipi { get; set; }
         public DURUM Durum { get; set; }
 
-
+        public Araba()
+        {
+            
+        }
         public Araba(string plaka, string marka, float kiralamaBedeli, ARAC_TIPI aracTipi)
         {
             //burada atamayı yaparken tüm harfleri büyüterek atayalım.
@@ -45,22 +60,12 @@ namespace galeri_otomasyonu
             this.AracTipi = aracTipi;
             this.Durum = DURUM.Galeride;
         }
+
         
     } // end class
 
-     public enum DURUM
-    {
-        Empty = 45,
-        Kirada = 65,
-        Galeride = 74
-    }
+    public enum DURUM{Empty,Kirada,Galeride}
 
-    public enum ARAC_TIPI
-    {
-        Empty = 34,
-        SUV = 56,
-        Sedan = 23,
-        Hatcback = 76
-    }
+    public enum ARAC_TIPI{Empty,SUV,Sedan,Hatcback}
 
 }
