@@ -8,7 +8,10 @@ namespace galeri_otomasyonu
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Uygulama otomasyon = new Uygulama();
+
+            otomasyon.Calistir();
         }
     }
 }
+//selam canım ben amcanım

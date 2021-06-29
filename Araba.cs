@@ -37,10 +37,9 @@ namespace galeri_otomasyonu
         {
             get
             {
-                // aracın toplam kiralanma süresi ve kiralanma 
-                // bedeli kullanarak ciro bulunacak return edilecek
 
-                return 0;
+               return this.ToplamKiralanmaSuresi * KiralamaBedeli;
+               
             }
         }// İHTİYAÇ DOĞRULTUSUNDA EKLENDİ
 
@@ -61,6 +60,21 @@ namespace galeri_otomasyonu
             this.Durum = DURUM.Galeride;
         }
 
+        public string AracBilgisi()
+        {
+            string sonuc = this.Plaka.PadRight(10) + this.Marka.PadRight(15) + (this.KiralamaBedeli + "TL").ToString().PadRight(20) + this.AracTipi.ToString().PadRight(15) + this.KiralanmaSayisi.ToString().PadRight(20) + this.Durum.ToString().PadRight(15);
+
+            return sonuc;
+        }
+
+        public bool KiradaMi()
+        {
+            if(this.Durum == DURUM.Kirada)
+                return true;
+            
+            return false;
+        }
+
         
     } // end class
 
@@ -68,4 +82,4 @@ namespace galeri_otomasyonu
 
     public enum ARAC_TIPI{Empty,SUV,Sedan,Hatcback}
 
-}
+} 

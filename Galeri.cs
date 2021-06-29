@@ -24,34 +24,55 @@ namespace galeri_otomasyonu
                 return adet;
             }
         }
-        public int GaleridekiAracSayisi { 
+
+        public int GaleridekiToplamArac
+        {
             get
             {
-                // burada Arabalar listesinde ki araçların arasından 
-                //kaç tanesinin durumu galeride olduğu return edilecek
-                return 0;
+                return Arabalar.Count;
+            }
+        }
+        public int GaleridekiAracSayisi 
+        { 
+            get
+            {
+                return  this.GaleridekiToplamArac - this.KiradakiAracSayisi;
+                
             } 
         }
+
         public int ToplamAracKiralanmaSuresi { 
             get
             {
-                // her bir aracın toplam kiralama süresi toplanıp return edilecek
-                return 0;
+                int toplam = 0; 
+                foreach(Araba t in Arabalar)
+                {
+                    toplam += t.ToplamKiralanmaSuresi;
+                }
+                return toplam;
             } 
         
         }
         public int ToplamAracKiralanmaAdedi { 
             get
             {
-                // her bir aracın kiralanma sayısı toplanıp return edilecek
-                return 0;
+                int toplam = 0;
+                foreach(Araba t in Arabalar)
+                {
+                    toplam += t.KiralanmaSayisi;
+                }
+                return toplam;
             } 
         }
         public float Ciro { 
             get
             {
-                // herbir aracın AracinCirosu toplanacak ve return edilecek
-                return 0;
+                float toplam = 0;
+                foreach(Araba t in Arabalar)
+                {
+                    toplam += t.AracinCirosu;
+                }
+                return toplam;
             } 
         }
 
@@ -59,35 +80,45 @@ namespace galeri_otomasyonu
 
         public void ArabaKirala(string plaka, int sure)
         {
-            Araba a = null;
-
-            foreach (Araba item in this.Arabalar)
-            {
-                if (item.Plaka == plaka)
-                {
-                    a = item;
-                }
-            }
-
-            a.KiralanmaSureleri.Add(sure);
-            a.Durum = DURUM.Kirada;
+            int index = this.IndexBulPlakayaGore(plaka);
+            this.Arabalar[index].KiralanmaSureleri.Add(sure);
+            this.Arabalar[index].Durum = DURUM.Kirada;
         }
 
 
-        public void ArabaEkle(/* araç parametereli*/)
+        public void ArabaEkle(string plaka, string marka, float kiralamaBedeli, ARAC_TIPI aracTipi)
         {
-            //Parametreneden geln değerler ile bir araç nesnesi oluşturulmalı ve
-            //Arabalar listesine eklenmeli
-            //bu metodun parametresinden arabaya ait tüm bilgiler tek tek gelmeli
-
+            Araba arabaNesnesi = new Araba(plaka, marka, kiralamaBedeli, aracTipi);
+            Arabalar.Add(arabaNesnesi);
         }
 
         public Araba ArabaBul(string plaka)
         {
             Araba x = new Araba();
-            // plaka il eşleşen 
-            return x;
+            foreach(Araba t in Arabalar)
+                if(t.Plaka == plaka.ToUpper())
+                {
+                    x = t;
+                    break;
+                }
+            
+                return x;
         } // İHTİYAÇ DOĞRULTUSUNDA EKLENDİ
-        
+
+        public int IndexBulPlakayaGore(string plaka)
+        {
+            return this.Arabalar.IndexOf(this.ArabaBul(plaka.ToUpper()));
+        } // İHTİYAÇ DOĞRULTUSUNDA EKLENDİ
+
+        public bool AracVarmi(string plaka)/*Plakaya ait aracın olup olmama durumunu sorgular*/
+        {
+            foreach (Araba item in Arabalar)
+                if(item.Plaka == plaka.ToUpper())
+                    return true;
+            
+
+            return false;
+        }
+
     }
 }
