@@ -10,3 +10,8 @@
 
 ## Start
 ![Başlangıç](/images/Baslangic.jpg)
+Temel iskelet yapısı oluşturuldu
+
+## V1
+![Başlangıç](/images/1.calisma.jpg)
+Yeni metotlar eklendi, program çalışıyor
