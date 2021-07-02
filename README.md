@@ -12,6 +12,10 @@
 ![Başlangıç](/images/Baslangic.jpg)
 Temel iskelet yapısı oluşturuldu
 
-## V1
-![Başlangıç](/images/1.calisma.jpg)
+## V 0.1
+![İlk çalışma](/images/1.calisma.jpg)
 Yeni metotlar eklendi, program çalışıyor
+
+## Final
+![Final](/images/Bitis.jpg)
+Son dokunuşlar yapıldı
