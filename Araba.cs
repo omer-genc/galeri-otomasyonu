@@ -62,7 +62,7 @@ namespace galeri_otomasyonu
 
         public string AracBilgisi()
         {
-            string sonuc = this.Plaka.PadRight(10) + this.Marka.PadRight(15) + (this.KiralamaBedeli + "TL").ToString().PadRight(20) + this.AracTipi.ToString().PadRight(15) + this.KiralanmaSayisi.ToString().PadRight(20) + this.Durum.ToString().PadRight(15);
+            string sonuc = this.Plaka.PadRight(10) + this.Marka.PadRight(15) + (this.KiralamaBedeli + "₺").ToString().PadRight(20) + this.AracTipi.ToString().PadRight(15) + this.KiralanmaSayisi.ToString().PadRight(20) + this.Durum.ToString().PadRight(15);
 
             return sonuc;
         }
