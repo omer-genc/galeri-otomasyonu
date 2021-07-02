@@ -51,6 +51,7 @@ namespace galeri_otomasyonu
                 }
             }
         }//end method
+
         public void Menu()
         {
             Console.WriteLine("Galeri Otomasyon ");
@@ -66,7 +67,7 @@ namespace galeri_otomasyonu
 
         public string SecimAl()
         {
-            Console.Write("Seçiminiz: ");
+            Console.Write("\nSeçiminiz: ");
             return Console.ReadLine().ToUpper();
         }
 
@@ -78,7 +79,11 @@ namespace galeri_otomasyonu
 
         public void AracKirala() /*SEÇİM 1*/
         {
-
+            if(this.galeri.GaleridekiAracSayisi == 0)
+            {
+                System.Console.WriteLine("Galeride araç yok");
+                return;
+            }
             Console.WriteLine("-Araç Kirala-");
             
             string plaka = "";
@@ -126,7 +131,11 @@ namespace galeri_otomasyonu
 
         public void AracTeslim()/*SEÇİM 2*/
         {
-
+            if(this.galeri.KiradakiAracSayisi == 0)
+            {
+                System.Console.WriteLine("Kiarada araç yok");
+                return;
+            }
             Console.WriteLine("-Araç Teslim-");
             
             string plaka = "";
@@ -174,6 +183,11 @@ namespace galeri_otomasyonu
 
         public void KiradakiAraclariYazdir() /*SEÇİM 3*/
         {
+            if(this.galeri.KiradakiAracSayisi == 0)
+            {
+                System.Console.WriteLine("Kirada araç yok");
+                return;
+            }
             foreach(Araba item in galeri.Arabalar)
                 if(item.KiradaMi())
                     System.Console.WriteLine(item.AracBilgisi());
@@ -183,6 +197,11 @@ namespace galeri_otomasyonu
 
         public void MusaitAraclariYazdir() /*SEÇİM 4*/
         {
+            if(this.galeri.GaleridekiAracSayisi == 0)
+            {
+                System.Console.WriteLine("Galeride araç yok");
+                return;
+            }
             foreach(Araba item in galeri.Arabalar)
                 if(!item.KiradaMi())
                     System.Console.WriteLine(item.AracBilgisi());
