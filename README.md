@@ -17,5 +17,5 @@ Temel iskelet yapısı oluşturuldu
 Yeni metotlar eklendi, program çalışıyor
 
 ## Final
-![Final](/images/Bitis.jpg)
+![Final](/images/Bitis.JPG)
 Son dokunuşlar yapıldı
