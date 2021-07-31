@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text>Space for diagram notes</help_text>
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>570</x>
+      <y>0</y>
+      <w>310</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>bg=blue
+Araba
+-
++List&lt;int&gt; KiralanmaSureleri
++string Plaka
++string Marka
++float KiralamaBedeli
++int ToplamKiralanmaSuresi
++int KiralanmaSayisi
++float AracinCirosu 
++ARAC_TIPI AracTipi
++DURUM Durum
++ARAC_TIPI AracTipi
++DURUM Durum
+-
++Araba(string plaka, string marka, 
+             float kiralamaBedeli, 
+             ARAC_TIPI aracTipi)
++string AracBilgisi()
++bool KiradaMi()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>580</x>
+      <y>430</y>
+      <w>310</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>bg=cyan
+Galeri
+-
++List&lt;Araba&gt; Arabalar 
++int KiradakiAracSayisi
++int GaleridekiToplamArac
++int GaleridekiAracSayisi 
++int ToplamAracKiralanmaSuresi 
++int ToplamAracKiralanmaAdedi 
++float Ciro
+-
++void ArabaKirala(string plaka, int sure)
++void ArabaEkle(string plaka, string marka, 
+        float kiralamaBedeli, ARAC_TIPI aracTipi)
++Araba ArabaBul(string plaka)
++int IndexBulPlakayaGore(string plaka)
++bool AracVarmi(string plaka)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>0</y>
+      <w>310</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>bg=pink
+namespace
+galeri_otomasyonu
+-
+Araba
+Galeri
+Uygulama
+-
++enum DURUM
+{
+   Empty,Kirada,Galeride
+}
+
++enum ARAC_TIPI
+{
+   Empty,SUV,Sedan,Hatcback
+}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>430</y>
+      <w>310</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>bg=red
+Uygulama
+-
+Galeri galeri
+-
++void Calistir()
++void Menu()
++string SecimAl()
++void AracKirala()
++void AracTeslim()
++void KiradakiAraclariYazdir()
++void MusaitAraclariYazdir() 
++void TumAraclariListele()
++void YeniAracKaydet()
++ARAC_TIPI AracTipiSec()
++void AracSil() 
++void BilgiGoster() 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>300</y>
+      <w>30</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>580</y>
+      <w>270</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;10.0</additional_attributes>
+  </element>
+</diagram>

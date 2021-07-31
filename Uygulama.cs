@@ -54,7 +54,7 @@ namespace galeri_otomasyonu
 
         public void Menu()
         {
-            Console.WriteLine("Galeri Otomasyon ");
+
             Console.WriteLine("1 - Araba Kirala(K) ");
             Console.WriteLine("2 - Araba Teslim Al(T) ");
             Console.WriteLine("3 - Kiradaki arabaları listele(R) ");
